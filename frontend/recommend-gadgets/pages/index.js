@@ -230,7 +230,7 @@ const Home = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M9 5l7 7-7 7"
+              d="M9 5l7 7-7 7" 
             ></path>
           </symbol>
         </svg>
@@ -250,10 +250,11 @@ const Home = () => {
                 <tr key={item} className={styles.availableItem}>
                   <td className={styles.categoryCell}>{item}</td>
                   <td className={styles.viewProductsCell}>
-                    <a
+                    <a    
                       href={`#search-${pageNo}`}
                       onClick={(e) => {
                         e.preventDefault();
+
                         setName(item);
                         setPageNo(1);
                         refetch({ cancelRefetch: true });
