@@ -1,0 +1,354 @@
+.container {
+  padding: -1px 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 3rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchImage {
+  flex-grow: 0; 
+  flex-shrink: 1;
+  margin: 0;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin-top: 2rem;
+}
+
+.card {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: left;
+  background-color: white;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 250px;
+  box-shadow: 0 1px 8px #b8c6db;
+  -moz-box-shadow: 0 1px 8px #b8c6db;
+  -webkit-box-shadow: 0 1px 8px #b8c6db;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+  opacity: 0.8;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.card .product_name {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* To display only 3 lines, for more than 3 lines put ellipsis */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.searchbox {
+  width: 100%;
+  max-width: 850px;
+  position: relative;
+  display: flex;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.searchinput {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 15px 45px 15px 15px;
+  background-color: #9c9c9c;
+  color: #ffffff;
+  border-radius: 6px;
+  border:none;
+  transition: all .4s;
+}
+
+.searchinput::placeholder {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.searchinput:focus {
+  border:none;
+  outline:none;
+  box-shadow: 0 1px 8px #b8c6db;
+  -moz-box-shadow: 0 1px 8px #b8c6db;
+  -webkit-box-shadow: 0 1px 8px #b8c6db;
+}
+
+.searchbtn {
+  background-color: #111111;
+  font-size: 24px;
+  padding: 6px 12px;
+  margin-left: -39px;
+  border:none;
+  color: white;
+  transition: all .4s;
+  z-index: 10;
+  border-radius: 6px;
+}
+
+.searchbtn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.searchbtn:focus {
+  outline:none;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+} */
+
+.hide {
+  display: none;
+  visibility: hidden;
+  height: 0;
+}
+
+.pagination_container {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.arrow_text {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.pagination_number {
+  --size: 2.5rem;
+  --margin: 0.5rem;
+  color: white;
+  margin: 0 var(--margin);
+  border-radius: 6px;
+  background: #202020;
+  max-width: auto;
+  min-width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: -2px;
+  padding: 0 0.7rem;
+}
+
+.pagination_disabled {
+  cursor: not-allowed;
+  background-color: #6d6d6d;
+}
+
+@media (hover: hover) {
+  .pagination_number:hover {
+    background: #4e4e4e;
+  }
+}
+.pagination_number:active {
+  background: #282828;
+}
+
+/* Home.module.css */
+
+/* Navbar */
+.navbar {
+  background-color: #131418;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+  width: 50px;
+}
+
+/* Navigation Links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navLinks li {
+  margin: 0 10px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #f2f5f7;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #61DAFB;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line1, .hamburger .line2, .hamburger .line3 {
+  width: 30px;
+  height: 3px;
+  background: #f2f5f7;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Styles for Small Screens */
+@media screen and (max-width: 768px) {
+  .logo img {
+      height: 40px;
+      width: 40px;
+  }
+
+  .navLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #131418;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+  }
+
+  .navLinks.open {
+      display: flex;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+}
+
+/* Navigation Links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navLinks li {
+  margin: 0 15px; /* Increased space between nav items */
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #f2f5f7;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #61DAFB;
+}
+
+/* Button Styles */
+.loginButton, .signupButton {
+  background-color: transparent;
+  border: 2px solid #f2f5f7;
+  border-radius: 25px;
+  padding: 8px 15px;
+  font-size: 16px;
+  color: #f2f5f7;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.loginButton:hover, .signupButton:hover {
+  background-color: #f2f5f7;
+  color: #131418;
+}
+
+.whiteText {
+  color: #ffffff; /* White color */
+}
+
+.footer {
+  background-color: #131418;
+  padding: 20px;
+  text-align: center;
+  color: #f2f5f7;
+  font-size: 14px;
+}
+
+
+.recommendationHeading {
+  padding: 0px 20px; /* Adjust the padding values as needed */
+  /* Add any other styles you want for the heading */
+}
+
