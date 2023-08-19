@@ -32,6 +32,13 @@ const Home = () => {
     console.log('Perform side effect on error => ', error);
   };
 
+  const handleSearchEnter = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent the default form submission behavior
+      refetch({ cancelRefetch: true });
+    }
+  };
+
   const {
     isLoading,
     data,
@@ -97,7 +104,9 @@ const Home = () => {
               setName(e.target.value);
               setPageNo(1);
             }}
-            placeholder="Search electronic gadgets ...."
+            
+            onKeyDown={handleSearchEnter} 
+              placeholder="Search electronic gadgets ...."
           />
           <button
             className={styles.searchbtn}
@@ -157,9 +166,74 @@ const Home = () => {
         )}
         {data?.productsData && data?.productsData.length > 0 && (
           <div className={styles.pagination_container}>
-            {/* Pagination controls */}
+          <a
+            href={`#search-${pageNo}`}
+            className={`${styles.pagination_number} ${pageNo === 1 && styles.pagination_disabled
+              } ${styles.arrow}`}
+            onClick={() => {
+              setPageNo((old) => Math.max(old - 1, 1));
+            }}
+          >
+            <svg width="24" height="24">
+              <use xlinkHref="#left" />
+            </svg>
+            <span className={styles.arrow_text}>Prev</span>
+          </a>
+
+          <div
+            className={`${styles.pagination_number} ${styles.pagination_active}`}
+          >
+            {pageNo}
           </div>
+
+          <a
+            href={`#search-${pageNo}`}
+            className={`${styles.pagination_number} ${styles.arrow} ${!data?.hasMore && styles.pagination_disabled
+              } ${styles.arrow}`}
+            onClick={() => {
+              if (!isPreviousData && data.hasMore) {
+                setPageNo((old) => old + 1);
+              }
+            }}
+          >
+            <span className={styles.arrow_text}>Next</span>
+            <svg width="24" height="24">
+              <use xlinkHref="#right" />
+            </svg>
+          </a>
+        </div>
         )}
+
+<svg className={styles.hide}>
+          <symbol
+            id="left"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </symbol>
+          <symbol
+            id="right"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </symbol>
+        </svg>
       </main>
 
         <div className={styles.availableItems}>
@@ -200,7 +274,7 @@ const Home = () => {
         </div>
 
         <footer className={styles.footer}>
-          <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Product Recommendation System. All rights reserved.</p>
         </footer>
       
     </div>
