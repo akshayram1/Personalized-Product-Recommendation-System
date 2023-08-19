@@ -1,11 +1,21 @@
+.mainContainer {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222222;
+  background-color: #f1f3f6;
+}
+
+
 .container {
-  padding: -1px 2rem;
+  padding: 2 2rem;
 }
 
 .main {
   min-height: 100vh;
   padding: 3rem 0;
-  flex: 1;
+  flex: 2;
+  /* Adjust the flex value */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +23,7 @@
 }
 
 .searchImage {
-  flex-grow: 0; 
+  flex-grow: 0;
   flex-shrink: 1;
   margin: 0;
   width: 100%;
@@ -35,25 +45,25 @@
   margin: 1rem;
   padding: 1rem;
   text-align: left;
-  background-color: white;
+  background-color: #ffffff;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 250px;
-  box-shadow: 0 1px 8px #b8c6db;
-  -moz-box-shadow: 0 1px 8px #b8c6db;
-  -webkit-box-shadow: 0 1px 8px #b8c6db;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #4469a1;
+  /* Navy blue color */
+  border-color: #4469a1;
   opacity: 0.8;
 }
+
 
 .card h2 {
   margin: 0 0 1rem 0;
@@ -89,10 +99,10 @@
   max-width: 850px;
   position: relative;
   display: flex;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .searchinput {
@@ -101,11 +111,11 @@
   font-size: 17px;
   font-weight: 500;
   padding: 15px 45px 15px 15px;
-  background-color: #9c9c9c;
-  color: #ffffff;
+  background-color: #4469a1;
+  color: #fffefe;
   border-radius: 6px;
-  border:none;
-  transition: all .4s;
+  border: none;
+  transition: all 0.4s;
 }
 
 .searchinput::placeholder {
@@ -114,8 +124,8 @@
 }
 
 .searchinput:focus {
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
   box-shadow: 0 1px 8px #b8c6db;
   -moz-box-shadow: 0 1px 8px #b8c6db;
   -webkit-box-shadow: 0 1px 8px #b8c6db;
@@ -126,7 +136,7 @@
   font-size: 24px;
   padding: 6px 12px;
   margin-left: -39px;
-  border:none;
+  border: none;
   color: white;
   transition: all .4s;
   z-index: 10;
@@ -139,7 +149,7 @@
 }
 
 .searchbtn:focus {
-  outline:none;
+  outline: none;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -177,10 +187,10 @@
 .pagination_number {
   --size: 2.5rem;
   --margin: 0.5rem;
-  color: white;
+  color: #ffffff;
   margin: 0 var(--margin);
   border-radius: 6px;
-  background: #202020;
+  background: #2874f0;
   max-width: auto;
   min-width: var(--size);
   height: var(--size);
@@ -202,6 +212,7 @@
     background: #4e4e4e;
   }
 }
+
 .pagination_number:active {
   background: #282828;
 }
@@ -210,7 +221,7 @@
 
 /* Navbar */
 .navbar {
-  background-color: #131418;
+  background-color: #061a39;
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -218,7 +229,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -257,7 +267,9 @@
   cursor: pointer;
 }
 
-.hamburger .line1, .hamburger .line2, .hamburger .line3 {
+.hamburger .line1,
+.hamburger .line2,
+.hamburger .line3 {
   width: 30px;
   height: 3px;
   background: #f2f5f7;
@@ -268,30 +280,30 @@
 /* Responsive Styles for Small Screens */
 @media screen and (max-width: 768px) {
   .logo img {
-      height: 40px;
-      width: 40px;
+    height: 40px;
+    width: 40px;
   }
 
   .navLinks {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: #131418;
-      width: 100%;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-      z-index: 99;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #061a39;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    z-index: 99;
   }
 
   .navLinks.open {
-      display: flex;
+    display: flex;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 }
 
@@ -303,7 +315,8 @@
 }
 
 .navLinks li {
-  margin: 0 15px; /* Increased space between nav items */
+  margin: 0 15px;
+  /* Increased space between nav items */
 }
 
 .navLinks a {
@@ -318,7 +331,8 @@
 }
 
 /* Button Styles */
-.loginButton, .signupButton {
+.loginButton,
+.signupButton {
   background-color: transparent;
   border: 2px solid #f2f5f7;
   border-radius: 25px;
@@ -329,26 +343,94 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.loginButton:hover, .signupButton:hover {
+.loginButton:hover,
+.signupButton:hover {
   background-color: #f2f5f7;
   color: #131418;
 }
 
 .whiteText {
-  color: #ffffff; /* White color */
+  color: #ffffff;
+  /* White color */
 }
 
 .footer {
-  background-color: #131418;
+  background-color: #061a39;
   padding: 20px;
   text-align: center;
   color: #f2f5f7;
   font-size: 14px;
 }
 
-
 .recommendationHeading {
-  padding: 0px 20px; /* Adjust the padding values as needed */
+  padding: 0px 20px;
+  /* Adjust the padding values as needed */
   /* Add any other styles you want for the heading */
 }
 
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  /* Adjust the gap between sections */
+}
+
+
+.availableItems {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 40px 0;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.availableItems h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.availableItemsTable {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.availableItemsTable th,
+.availableItemsTable td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.availableItemsTable th {
+  background-color: #f0f0f0;
+  color: #444;
+}
+
+.availableItemsTable tr:hover {
+  background-color: #f0f8ff;
+}
+
+.viewProductsLink {
+  text-decoration: none;
+  color: #005cbf;
+  padding: 8px 20px;
+  border-radius: 25px;
+  background-color: #e6f7ff;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.viewProductsLink:hover {
+  background-color: #b3e0ff;
+  color: #004c8b;
+}
